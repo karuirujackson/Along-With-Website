@@ -1,17 +1,17 @@
 import Image from "next/image";
-import BrandPen from '../assets/Brand-Pen.svg'
-import BrandPhone from '../assets/Brand-Phone.svg';
-import BrandSet from '../assets/Brand-Set.svg';
-import DotPattern from '../assets/Dot Pattern.svg';
-import IngredientsRecipe from '../assets/Ingredients and recipe.svg';
-import BrandBox from '../assets/Brand Box.svg';
-import BrandLedger from '../assets/Brand-Ledger.svg';
-import MockUp from '../assets/Mockup.svg';
+import BrandPen from '../../../../public/assets/Brand-Pen.svg';
+import BrandPhone from '../../../../public/assets/Brand-Phone.svg';
+import BrandSet from '../../../../public/assets/Brand-Set.svg';
+import DotPattern from '../../../../public/assets/Dot Pattern.svg';
+import IngredientsRecipe from '../../../../public/assets/Ingredients and recipe.svg';
+import BrandBox from '../../../../public/assets/Brand Box.svg';
+import BrandLedger from '../../../../public/assets/Brand-Ledger.svg';
+import MockUp from '../../../../public/assets/Mockup.svg';
 
 export default function Feature() {
   return (
-    <div className="h-screen py-16">
-      <div className="flex flex-col gap-12 px-4">
+    <div className="py-16">
+      <div className="flex flex-col gap-12 px-4 container mx-auto">
         <section className="flex flex-col md:text-center items-center justify-center gap-4">
           <h2 className="text-[#111827] text-3xl md:text-4xl md:leading-10 leading-8 tracking-tight font-extrabold">Engage with your audience</h2>
           <p className="text-xl leading-7 font-normal md:w-2/3 text-[#6B7280]">With Along With, you can invite your community to join you in real-time, cooking along with you and sharing the joy of culinary creation.</p>

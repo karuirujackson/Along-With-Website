@@ -2,9 +2,9 @@ import React from 'react'
 
 function NewsLetter() {
   return (
-    <section className='bg-[#0A6847] h-screen'>
-        <div className="flex flex-col md:flex-row gap-8 md:px-8 md:py-16 px-4 py-12">
-            <div className="flex flex-col gap-3 md:w-1/2">
+    <section className='bg-[#0A6847] '>
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 md:px-8 md:py-16 px-4 py-12 container mx-auto">
+            <div className="flex flex-col gap-3 md:w-1/2 md:pl-8">
                 <h3 className="text-3xl md:text-4xl md:leading-10 leading-9 font-extrabold tracking-tight text-[#ffff]">Sign Up for our NewsLetter</h3>
                 <p className="text-lg leading-6 font-normal text-[#D1D5DB]">Join our newsletter mailing list today to stay up-to-date with the latest news and updates from Along With. As a subscriber, you’ll receive exclusive content, early access to new features, and special promotions.</p>
             </div>
