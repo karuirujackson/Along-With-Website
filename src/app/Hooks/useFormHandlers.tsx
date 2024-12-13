@@ -9,11 +9,11 @@ export const useFormHandlers = () => {
     mobileNumber: "",
     });
 
-    const onChange = (e) => {
+    const onChange = (e: React.FormEvent<HTMLInputElement>) => {
         handleChange(e, formData, setFormData);
     };
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
         handleSubmit(formData);
     };

@@ -7,7 +7,7 @@ function NewsLetter() {
     
     const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
         if(!email) {
             setMessage('Please enter a valid email address!');
@@ -17,8 +17,8 @@ function NewsLetter() {
         setEmail('');
     };
 
-    const onChange = (e) => {
-        setEmail(e.target.value)
+    const onChange = (e: React.FormEvent<HTMLInputElement>) => {
+        setEmail(e.currentTarget.value)
     }
 
   return (
@@ -30,11 +30,11 @@ function NewsLetter() {
             </div>
             <div className="flex flex-col gap-3 md:py-[85px] md:pr-8">
                 <form onSubmit={handleSubmit} action="" className="flex flex-col md:flex-row gap-4">
-                    <input onChange={onChange} type="text" placeholder='Enter your Email' className=' border rounded-md px-8 py-3' />
-                    <button className='border rounded-md px-8 py-3 bg-[#F3CA52]'>Sign me Up!</button> 
+                    <input onChange={onChange} type="text" placeholder='Enter your Email' className=' border rounded-md px-[21px] py-[13px]' />
+                    <button className='rounded-md px-8 py-3 bg-[#F3CA52]'>Sign me Up!</button> 
                 </form>
                 {message && <p className="text-[#F3CA52] font-bold text-xl mt-2">{message}</p>}
-                <p className="text-sm md:text-base leading-5 font-normal text-[#D1D5DB]">We care about the protection of your data. Read our <span className="underline">Privacy Policy.</span></p>
+                <p className="text-sm md:text-base leading-5 font-normal text-[#D1D5DB]">We care about the protection of your data. Read our <span className="underline text-white">Privacy Policy.</span></p>
             </div>
         </div>
     </section>

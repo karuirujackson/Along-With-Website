@@ -12,37 +12,19 @@ import X from '../../../../public/assets/X Logo.svg';
 import FaceBook from '../../../../public/assets/Facebook Logo.svg';
 import Youtube from '../../../../public/assets/Youtube logo.svg';
 import Link from 'next/link';
+import { useFormHandlers } from '../../Hooks/useFormHandlers';
 
 function Hero() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const [submitted, setSubmitted] = useState(false);
 
-    const [formData, setFormData] = useState({
-      profileLink: "",
-      fullName: "",
-      email: "",
-      mobileNumber: "",
-    });
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Form submitted", formData);
-      setSubmitted(true);
-    };
+    const { formData, onChange, onSubmit } = useFormHandlers();
   
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
-
+    
   return (
     <section className="flex flex-col gap-16 pt-6 pb-16 bg-[#0A6847] ">
         <div className="flex flex-col gap-16 container mx-auto">
@@ -133,14 +115,14 @@ function Hero() {
                                 <p>Your form has been successfully submitted.</p>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} action="" className="flex flex-col gap-6 px-4 py-8 md:px-10">
+                            <form onSubmit={onSubmit} action="" className="flex flex-col gap-6 px-4 py-8 md:px-10">
                                 <div className="flex gap-1">
                                     <h4 className="text-sm leading-5 font-medium text-[#111827]">Schedule a call with us</h4>
                                 </div>
-                                <input onChange={handleChange} value={formData.profileLink || ''} type="text" id='profileLink' name='profileLink' placeholder='Social Media Profile Link' className="border rounded-md shadow-sm px-3 py-2" />
-                                <input onChange={handleChange} value={formData.fullName || ''} type="text" id='fullName' name='fullName' placeholder='Full Name' className="border rounded-md shadow-sm px-3 py-2" />
-                                <input onChange={handleChange} value={formData.email || ''} type="text" id='email' name='email' placeholder="https://example.com" className="border rounded-md shadow-sm px-3 py-2" />
-                                <input onChange={handleChange} value={formData.mobileNumber || ''} type="text" id='mobileNumber' name='mobileNumber' placeholder='Mobile Number' className="border rounded-md shadow-sm px-3 py-2" />
+                                <input onChange={onChange} value={formData.profileLink || ''} type="text" id='profileLink' name='profileLink' placeholder='Social Media Profile Link' className="border rounded-md shadow-sm px-3 py-2" />
+                                <input onChange={onChange} value={formData.fullName || ''} type="text" id='fullName' name='fullName' placeholder='Full Name' className="border rounded-md shadow-sm px-3 py-2" />
+                                <input onChange={onChange} value={formData.email || ''} type="text" id='email' name='email' placeholder="https://example.com" className="border rounded-md shadow-sm px-3 py-2" />
+                                <input onChange={onChange} value={formData.mobileNumber || ''} type="text" id='mobileNumber' name='mobileNumber' placeholder='Mobile Number' className="border rounded-md shadow-sm px-3 py-2" />
                                 <button type='submit' className=" border rounded-md px-4 py-2 bg-[#F3CA52] shadow-sm">
                                     <span className="text-sm text-[#1F2937] leading-5 font-medium">Talk to Us!</span>
                                 </button>

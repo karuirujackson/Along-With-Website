@@ -7,6 +7,5 @@ export const handleChange = (e, formData, setFormData) => {
 };
 
 export const handleSubmit = (formData) => {
-    // e.preventDefault();
     console.log('Form Submitted Successfully', formData);
 };
